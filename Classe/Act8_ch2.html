@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    
+    <body>
+
+        <div id="root"></div>
+        
+        <script type="text/babel">
+
+// Avec évènement
+
+class App extends React.Component{
+    constructor(props){
+        super(props)
+        this.state={
+            msg:"Veuillez vous inscrire",
+            ins:"Inscription",
+            img:"51839.png"
+        }
+    }
+    Changement=()=>{
+        this.setState(
+            {
+                msg:"Suivez les màj",
+                ins:"Déjà inscrit",
+                img:"4438847.png"
+
+            }
+        )
+    }
+    styles1={
+        marginTop:"100px" ,
+        fontStyle:"bold",
+         color:"teal",
+    }
+    stylesImg={
+        marginLeft:"600px" ,
+        marginTop:"50px" ,
+        width:"150px",
+         height:"150px",
+         position:"absolute",
+    }
+    stylesBouton={
+        width:"200px",
+         height:"50px",
+         marginTop:"20px" ,
+        borderRadius:"50px",
+        fontStyle:"bold",
+        fontSize:"20",
+        backgroundColor:"teal"
+    }
+    render(){
+        return(
+   <div> <center>
+    <h1 style={this.styles1}>{this.state.msg}</h1>
+    <button style={this.stylesBouton} onClick={this.Changement}>{this.state.ins}</button> </center>
+    <img src={this.state.img} style={this.stylesImg}  />
+    
+    </div> 
+ )
+    } 
+}
+
+
+
+ReactDOM.render(<App />,document.getElementById('root'));
+
+
+
+       </script>
+
+
+    </body>
+</html>
