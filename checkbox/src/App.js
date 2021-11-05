@@ -1,5 +1,5 @@
 
-import CaseCocher from "./Comonents/CaseCocher";
+import CaseCocher from "./Components/CaseCocher";
 import React from 'react';
 import './Source.css';
 
