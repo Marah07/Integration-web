@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+
+  const date = new Date()
+  const hours = date.getHours()
+  let tps
+  const styles={
+color:"red",
+textAlign:"center"
+  }
+
+  function  App() {
+      
+  if (hours < 12) {
+    tps = "matin"
+    styles.color="red" 
+
+  } else if (hours >= 12 && hours < 17) {
+    tps = "après-midi"
+    styles.color="blue"
+
+  } else {
+    tps = "soir" 
+    styles.color="purple"
+  }
+  
+  return (
+    <h1 style={styles}>Bon {tps} !</h1>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById("root"))
+
+</script>
+
+
+</body>
+</html>
